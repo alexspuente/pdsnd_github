@@ -64,11 +64,14 @@ def load_data(city, month, day):
     """
 
     df = pd.read_csv(CITY_DATA[city])
+
+    # Convert the dates from strings to types
      
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day_name()
+
     if month != 'All':
         months = ['January','February','March','April','May','June']
         month = months.index(month) + 1
@@ -190,6 +193,7 @@ def display_additional_data(df):
     """
     Displays 5 rows of raw data at a time through pagination
     """
+
     prev = 0
     while True:
         data_display = input('Do you wish to see five rows of raw data? (Yes or No): ')
@@ -201,6 +205,8 @@ def display_additional_data(df):
             break
         else:
             print('Please type yes or no')
+
+# Define main function to display in order user input prompts and data outputs
 
 def main():
     restart = 'yes'
