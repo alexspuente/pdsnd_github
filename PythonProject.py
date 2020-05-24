@@ -64,11 +64,14 @@ def load_data(city, month, day):
     """
 
     df = pd.read_csv(CITY_DATA[city])
+
+    # Convert the dates from strings to types
      
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day_name()
+    
     if month != 'All':
         months = ['January','February','March','April','May','June']
         month = months.index(month) + 1
