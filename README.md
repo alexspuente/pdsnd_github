@@ -1,8 +1,6 @@
-### Date created
 This README file was made on *May 24th 2020*.
 
-### Project Title
-**Bike Share Data Tool**
+### Bike Share Data Tool
 
 ### Description
 The goal of this project is to create an interactive experience in order to extract valuable information from a bike sharing database.
